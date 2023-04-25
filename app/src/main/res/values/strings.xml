@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">SecretIdeal</string>
+    <string name="delete_acc_desc">
+        <p>Удаление аккаунта приведет к удалению всех ваших</p>
+        <p>личных данных и данных состояния здоровья,</p>
+        <p>активности в приложении/на веб-сайте и данных</p>
+        <p>аналитики, а также отзовет ваше согласие на</p>
+        <p>обработку этих данных. Вы также сможете</p>
+        восстановить аккаунт после удаления
+    </string>
+
+    <string-array name = "user_gender">
+        <item>Женский</item>
+        <item>Мужской</item>
+    </string-array>
+
+    <string-array name = "user_activity">
+        <item>Сидячий</item>
+        <item>Малоактивный</item>
+        <item>Активный</item>
+        <item>Очень активный</item>
+    </string-array>
+
+    <string-array name = "user_weight_dimensions">
+        <item>Кг</item>
+    </string-array>
+
+    <string-array name = "user_goal">
+        <item>Увеличение веса</item>
+        <item>Медленное увеличение веса</item>
+        <item>Сохранение нынешнего веса</item>
+        <item>Медленная потеря веса</item>
+        <item>Потеря веса</item>
+    </string-array>
+</resources>
