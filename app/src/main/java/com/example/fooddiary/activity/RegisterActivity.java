@@ -35,13 +35,16 @@ public class RegisterActivity extends AppCompatActivity {
 
                 if(email.equals("") || fullname.equals("") || password.equals("") || phone.equals("")) {
                     Toast.makeText(RegisterActivity.this, "Все поля должны быть заполнены", Toast.LENGTH_SHORT).show();
-                } else {
+                }else if(dbManager.CheckIsUserAlreadyExists(fullname)) {
                     dbManager.insert(email, fullname, password, phone);
                     Toast.makeText(RegisterActivity.this, "Регистрация выполнена успешно", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                     startActivity(intent);
+                } else {
+                    Toast.makeText(RegisterActivity.this, "Пользователь с таким именем существует", Toast.LENGTH_SHORT).show();
                 }
             }
         });
     }
 }
+

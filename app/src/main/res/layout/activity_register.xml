@@ -91,7 +91,7 @@
         android:ems="10"
         android:fontFamily="serif"
         android:hint="Введите пароль"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         android:minHeight="48dp"
         android:padding="10dp"
         android:textColor="@color/dark_gray"

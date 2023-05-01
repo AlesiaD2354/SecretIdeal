@@ -76,6 +76,18 @@ public class DBManager {
         return cursor;
     }
 
+    public boolean CheckIsUserAlreadyExists(String username) {
+        database = dbHelper.getWritableDatabase();
+        Cursor cursor = database.rawQuery("select fullname from USERS where fullname=?", new String[] {username});
+        System.out.println(cursor);
+        if (cursor.getCount() > 0) {
+            cursor.close();
+            return false;
+        }
+        cursor.close();
+        return true;
+    }
+
     public int update(long _id, String email, String fullname, String password, String phone) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(DatabaseHelper.EMAIL, email);
@@ -144,7 +156,7 @@ public class DBManager {
     }
 
     public boolean updateUserRda(String username, String age, String gender, String activity, String weight,
-                              String height, String goal) {
+                                 String height, String goal) {
         database = dbHelper.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(DatabaseHelper.AGE, age);
@@ -241,3 +253,4 @@ public class DBManager {
         return ins != -1;
     }
 }
+
